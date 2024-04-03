@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CamFollow : MonoBehaviour
 {
+    public Vehicles vehicles;
     Vector3 currentOffset; 
     public Transform target;
     public Vector3 firstPersonOffset;
@@ -20,12 +21,21 @@ public class CamFollow : MonoBehaviour
     void LateUpdate()
     {
         if (target == null) return; // Ensure that there is a target set 
-
-        // Toggle between first-person and third-person perspectives
-        if (Input.GetKeyDown(KeyCode.F))
+        if (!vehicles.isPlayer2)
         {
-            isFirstPerson = !isFirstPerson; // toggles the first person bool on keypress 
-            currentOffset = isFirstPerson ? firstPersonOffset : thirdPersonOffset; // set current offset based on value in isFirstPerson
+            // Toggle between first-person and third-person perspectives
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                isFirstPerson = !isFirstPerson; // toggles the first person bool on keypress 
+                currentOffset = isFirstPerson ? firstPersonOffset : thirdPersonOffset; // set current offset based on value in isFirstPerson
+            }
+        } else
+        {
+            if (Input.GetKeyDown(KeyCode.Comma))
+            {
+                isFirstPerson = !isFirstPerson; // toggles the first person bool on keypress 
+                currentOffset = isFirstPerson ? firstPersonOffset : thirdPersonOffset; // set current offset based on value in isFirstPerson
+            }
         }
 
         // gets the desired postion 

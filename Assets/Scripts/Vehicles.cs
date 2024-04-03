@@ -18,6 +18,7 @@ public class Vehicles : MonoBehaviour
     private int currentHealth;
 
     public float maxSpeed;
+    public bool isPlayer2;
     bool isMoving;
     int pointsEarned = 0;
     float currentSpeed; //  store the current speed
@@ -38,22 +39,44 @@ public class Vehicles : MonoBehaviour
         }
         currentSpeed = rb.velocity.magnitude; // sets current speed to current velocity
         //only moves if speed is less than max 
-        if( currentSpeed < maxSpeed) { 
-            if (Input.GetKey(KeyCode.W))
+        if( currentSpeed < maxSpeed) {
+
+            if (!isPlayer2)
             {
-                rb.AddForce(acceleration * Time.deltaTime, ForceMode.Impulse);
-            }
-            if (Input.GetKey(KeyCode.S))
+                if (Input.GetKey(KeyCode.W))
+                {
+                    rb.AddForce(acceleration * Time.deltaTime, ForceMode.Impulse);
+                }
+                if (Input.GetKey(KeyCode.S))
+                {
+                    rb.AddForce(-acceleration * Time.deltaTime, ForceMode.Impulse);
+                }
+                if (Input.GetKey(KeyCode.A))
+                {
+                    rb.AddTorque(-turnForce * Time.deltaTime, ForceMode.Impulse);
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    rb.AddTorque(turnForce * Time.deltaTime, ForceMode.Impulse);
+                }
+            } else
             {
-                rb.AddForce(-acceleration * Time.deltaTime, ForceMode.Impulse);
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                rb.AddTorque(-turnForce * Time.deltaTime, ForceMode.Impulse);
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                rb.AddTorque(turnForce * Time.deltaTime, ForceMode.Impulse);
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    rb.AddForce(acceleration * Time.deltaTime, ForceMode.Impulse);
+                }
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    rb.AddForce(-acceleration * Time.deltaTime, ForceMode.Impulse);
+                }
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    rb.AddTorque(-turnForce * Time.deltaTime, ForceMode.Impulse);
+                }
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    rb.AddTorque(turnForce * Time.deltaTime, ForceMode.Impulse);
+                }
             }
         }
     }
@@ -89,9 +112,7 @@ public class Vehicles : MonoBehaviour
                     Debug.Log("Game Over - Hit a Rock!");
                     GameLost();
                     break;
-                case "Enemy":
-                    //check if first or third person // change location based on the perseive 
-                    
+                case "Enemy":                 
                     // Spawn explosion effects prefab at position of camera in first person, or point of collision in thrid person
                     Vector3 explosionPosition = camFollowScript.isFirstPerson ? mainCamera.transform.position + expOffset : col.contacts[0].point;
                     // spawn explosion effects prefab
