@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Vehicles : MonoBehaviour
 {
+    public CamFollow camFollowScript; // reference to camera follow script set in editor 
     public GameObject explosionPrefab;
     public AudioSource audioSource;
     public Rigidbody rb;
+    public Camera mainCamera;
     public Vector3 acceleration;
     public Vector3 turnForce;
-    
+    public Vector3 expOffset;
 
     public int maxHealth = 100;
     private int currentHealth;
@@ -88,8 +90,12 @@ public class Vehicles : MonoBehaviour
                     GameLost();
                     break;
                 case "Enemy":
+                    //check if first or third person // change location based on the perseive 
+                    
+                    // Spawn explosion effects prefab at position of camera in first person, or point of collision in thrid person
+                    Vector3 explosionPosition = camFollowScript.isFirstPerson ? mainCamera.transform.position + expOffset : col.contacts[0].point;
                     // spawn explosion effects prefab
-                    GameObject explosion = Instantiate(explosionPrefab, col.contacts[0].point, Quaternion.identity);
+                    GameObject explosion = Instantiate(explosionPrefab, explosionPosition, Quaternion.identity);
                     // Destroy the explosion effect after its finished based on the duration 
                     Destroy(explosion, explosion.GetComponent<ParticleSystem>().main.duration);
                     //explosionParticles.Play();
