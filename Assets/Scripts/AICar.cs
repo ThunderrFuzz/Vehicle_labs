@@ -11,7 +11,7 @@ public class AICar : MonoBehaviour
     {
         if (player == null)
         {
-            Debug.LogError("Player reference not set for AI!");
+            Debug.LogError("Player reference not set for AI! " + gameObject.name);
             return;
         }
         // direction to the player

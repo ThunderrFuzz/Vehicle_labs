@@ -11,12 +11,12 @@ TagManager:
   - Spool
   - Rock
   - Enemy
-  - New tag
+  - Projectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - destory
   - Water
   - UI
   - 
