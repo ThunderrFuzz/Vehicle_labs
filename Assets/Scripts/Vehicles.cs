@@ -7,6 +7,7 @@ public class Vehicles : MonoBehaviour
 {
     public CamFollow camFollowScript; // reference to camera follow script set in editor 
     public Missile missileScript;
+    public GMPoints gameScript;
     public GameObject explosionPrefab;
     public GameObject ProjectilePrefab;
     public AudioSource audioSource; //unused currently
@@ -35,11 +36,14 @@ public class Vehicles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameLost(); // resets game
+        }
         if (!isPlayer2)
         {
             if ((Input.GetMouseButtonDown(0)))
             {
-                // Fire missile here
                 Fire();
             }
         }
@@ -48,6 +52,7 @@ public class Vehicles : MonoBehaviour
             GameLost();
         }
         currentSpeed = rb.velocity.magnitude; // sets current speed to current velocity
+        
         //only moves if speed is less than max 
         if (currentSpeed < maxSpeed)
         {
@@ -62,6 +67,7 @@ public class Vehicles : MonoBehaviour
                 {
                     rb.AddForce(-acceleration * Time.deltaTime, ForceMode.Impulse);
                 }
+                
                 if (Input.GetKey(KeyCode.A))
                 {
                     Quaternion deltaRotation = Quaternion.Euler(-turnForce * Time.deltaTime);
@@ -73,6 +79,7 @@ public class Vehicles : MonoBehaviour
                     Quaternion deltaRotation = Quaternion.Euler(turnForce * Time.deltaTime);
                     rb.MoveRotation(rb.rotation * deltaRotation);
                 }
+                
             }
             else
             {
@@ -84,6 +91,8 @@ public class Vehicles : MonoBehaviour
                 {
                     rb.AddForce(-acceleration * Time.deltaTime, ForceMode.Impulse);
                 }
+              
+                
                 if (Input.GetKey(KeyCode.LeftArrow))
                 {
                     Quaternion deltaRotation = Quaternion.Euler(-turnForce * Time.deltaTime);
@@ -95,6 +104,7 @@ public class Vehicles : MonoBehaviour
                     Quaternion deltaRotation = Quaternion.Euler(turnForce * Time.deltaTime);
                     rb.MoveRotation(rb.rotation * deltaRotation);
                 }
+                
 
             }
         }
@@ -114,22 +124,25 @@ public class Vehicles : MonoBehaviour
             {
                 case "Barrel":
                     otherRb.AddForce(forceDirection * 45f, ForceMode.Impulse);
+                    if(isPlayer2) { gameScript.AddPoints(2); }
                     break;
                 case "Crate":
                     otherRb.AddForce(forceDirection * 20f, ForceMode.Impulse);
+                    if (isPlayer2) { gameScript.AddPoints(15); }
                     break;
                 case "Barrier":
                     otherRb.AddForce(forceDirection * 18f, ForceMode.Impulse);
+                    if (isPlayer2) { gameScript.AddPoints(20); }
                     break;
                 case "Cone":
                     otherRb.AddForce(forceDirection * 20f, ForceMode.Impulse);
+                    if (isPlayer2) { gameScript.AddPoints(5); }
                     break;
                 case "Spool":
                     otherRb.AddForce(forceDirection * 5f, ForceMode.Impulse);
+                    if (isPlayer2) { gameScript.AddPoints(10); }
                     break;
                 case "Rock":
-                    // Game over logic can be implemented here
-                    Debug.Log("Game Over - Hit a Rock!");
                     GameLost();
                     break;
                 case "Enemy":
@@ -141,8 +154,30 @@ public class Vehicles : MonoBehaviour
                     Destroy(explosion, explosion.GetComponent<ParticleSystem>().main.duration);
                     // Damage the player
                     TakeDamage(25);
-                    // Destroy the collided enemy car
-                    Destroy(col.gameObject);
+                    break;
+                case "Objective":
+
+                    if (isPlayer2)
+                    {
+
+                        gameScript.player2ReachedObjective = true;
+                    }
+                    if (!isPlayer2)
+                    {
+                        gameScript.player1ReachedObjective = true;
+                    }
+                    gameScript.setChain(gameScript.getChain() + 1) ;
+
+                    if (gameScript.player1ReachedObjective && gameScript.player2ReachedObjective)
+                    {
+                        Debug.Log("Both players reached the objective. Checking completion...");
+                        gameScript.CheckObjectiveCompletion();
+
+                        // Destroy the old objective and spawn a new one
+                        Destroy(col.gameObject);
+                        gameScript.SpawnObjective();
+                    }
+
                     break;
                 default:
                     Debug.Log("default col switch case");
@@ -156,7 +191,9 @@ public class Vehicles : MonoBehaviour
     void GameLost()
     {
         SceneManager.LoadScene("SampleScene"); // Reload the scene
+        gameScript.setChain(0);
     }
+    
 
     public void TakeDamage(int damageAmount)
     {
@@ -167,14 +204,12 @@ public class Vehicles : MonoBehaviour
     {
         // Creates an offset so the projectile won't spawn inside the tank and blow the player up right away like it was doing for the first 40 mins
         Vector3 spawnOffset = new Vector3(0f, 3f, 5f); // Adjust the offset value as needed
-        
         // Instantiate the projectile with the new starting position
         GameObject projectileInstance = Instantiate(ProjectilePrefab, transform.position + spawnOffset, transform.rotation);
         Rigidbody projectileRb = projectileInstance.GetComponent<Rigidbody>(); // gets projectiles rigidbody to apply force to 
 
         if (projectileRb != null)
         {
-            
             float missileSpeed = 100f; // speed of projectile setting
             projectileRb.AddForce(transform.forward * missileSpeed, ForceMode.Impulse); // adds the force 
         }

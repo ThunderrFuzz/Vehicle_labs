@@ -4,9 +4,15 @@ public class AICar : MonoBehaviour
 {
     public Transform player;    // player location
     public Rigidbody rb;        // ai rb
+    public HealthBar healthbar;
     public float maxSpeed = 5f; // ai max speed
     public float acceleration = 2f; // ai acceleration 
-
+    public float health;
+    float currentHealth;
+    void Start()
+    {
+        currentHealth = health;
+    }
     void Update()
     {
         if (player == null)
@@ -22,5 +28,14 @@ public class AICar : MonoBehaviour
         Vector3 velocityChange = (desiredVelocity - rb.velocity);
         // adds acceleration to rb 
         rb.AddForce(velocityChange * acceleration, ForceMode.Acceleration);
+    }
+    public void takeDamage(int dam)
+    {
+        currentHealth -= dam;
+        healthbar.UpdateHealthBar(currentHealth / health);
+    }
+    public float GetCurrHealth()
+    {
+        return currentHealth;
     }
 }

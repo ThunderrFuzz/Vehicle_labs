@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9e9ed64d5ae03344ba34c8db999dd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aiCar: {fileID: 0}
   explosionPrefab: {fileID: 8566017289396297617, guid: b4049f46d231b41498f682dd94c2c321,
     type: 3}
-  blastRadius: 10
+  blastRadius: 8
+  damage: 40
