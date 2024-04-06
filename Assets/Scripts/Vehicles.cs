@@ -18,14 +18,14 @@ public class Vehicles : MonoBehaviour
     public Vector3 expOffset;
     public string inputName;
     public int maxHealth = 100;
-    private int currentHealth;
-
     public float maxSpeed;
     public bool isPlayer2;
+    EndGameUI endGameUI;
+    GameObject objectiveToDestroy;
     bool isMoving;
     int pointsEarned = 0;
     float currentSpeed; //  store the current speed
-
+    int currentHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -124,7 +124,7 @@ public class Vehicles : MonoBehaviour
             {
                 case "Barrel":
                     otherRb.AddForce(forceDirection * 45f, ForceMode.Impulse);
-                    if(isPlayer2) { gameScript.AddPoints(2); }
+                    if(isPlayer2) {gameScript.AddPoints(2); }
                     break;
                 case "Crate":
                     otherRb.AddForce(forceDirection * 20f, ForceMode.Impulse);
@@ -156,28 +156,22 @@ public class Vehicles : MonoBehaviour
                     TakeDamage(25);
                     break;
                 case "Objective":
-
-                    if (isPlayer2)
-                    {
-
-                        gameScript.player2ReachedObjective = true;
-                    }
-                    if (!isPlayer2)
-                    {
-                        gameScript.player1ReachedObjective = true;
-                    }
+                    
+                    if (isPlayer2) gameScript.player2ReachedObjective = true;
+                    
+                    if (!isPlayer2) gameScript.player1ReachedObjective = true;
+                    
                     gameScript.setChain(gameScript.getChain() + 1) ;
 
                     if (gameScript.player1ReachedObjective && gameScript.player2ReachedObjective)
-                    {
-                        Debug.Log("Both players reached the objective. Checking completion...");
+                    { 
                         gameScript.CheckObjectiveCompletion();
-
-                        // Destroy the old objective and spawn a new one
-                        Destroy(col.gameObject);
-                        gameScript.SpawnObjective();
+                        //due to the invoke not allowing a function with params 
+                        // Referance to object to destory 
+                        objectiveToDestroy = col.gameObject;
+                        Invoke("DestroyObjectDelayed", 1f);
+                        Invoke("SpawnObjectiveDelayed", 1.5f);
                     }
-
                     break;
                 default:
                     Debug.Log("default col switch case");
@@ -187,10 +181,24 @@ public class Vehicles : MonoBehaviour
         }
 
     }
+    void SpawnObjectiveDelayed()
+    {
+        gameScript.SpawnObjective();
+    }
+    void DestroyObjectDelayed()
+    {
+        gameScript.despawnObjective();
+        
+    }
 
     void GameLost()
     {
-        SceneManager.LoadScene("SampleScene"); // Reload the scene
+        endGameUI.ShowEndGameMessage();
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("SampleScene"); // Reload the scene
+        }
+       
         gameScript.setChain(0);
     }
     
@@ -198,7 +206,10 @@ public class Vehicles : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-
+        if(currentHealth < 0)
+        {
+            GameLost();
+        }
     }
     void Fire()
     {

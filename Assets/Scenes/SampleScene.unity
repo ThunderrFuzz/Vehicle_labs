@@ -2159,7 +2159,7 @@ MonoBehaviour:
   healthbar: {fileID: 1627590177}
   maxSpeed: 8
   acceleration: 2
-  health: 100
+  health: 4
 --- !u!54 &113038074
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3558,7 +3558,7 @@ Transform:
   m_GameObject: {fileID: 181559671}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.5, y: -0.5, z: 3.1}
+  m_LocalPosition: {x: -10.5, y: -0.55, z: 3.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4077,7 +4077,7 @@ MonoBehaviour:
   healthbar: {fileID: 305040691}
   maxSpeed: 30
   acceleration: 3
-  health: 100
+  health: 4
 --- !u!54 &189450158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4466,6 +4466,7 @@ GameObject:
   - component: {fileID: 235434843}
   - component: {fileID: 235434845}
   - component: {fileID: 235434844}
+  - component: {fileID: 235434846}
   m_Layer: 0
   m_Name: Spline (3)
   m_TagString: Untagged
@@ -4734,6 +4735,27 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!65 &235434846
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235434842}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9, y: 4, z: 1.05}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &238574984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4818,6 +4840,7 @@ GameObject:
   - component: {fileID: 239261732}
   - component: {fileID: 239261734}
   - component: {fileID: 239261735}
+  - component: {fileID: 239261736}
   m_Layer: 0
   m_Name: Spline
   m_TagString: Untagged
@@ -5086,6 +5109,27 @@ MonoBehaviour:
   m_DeprecatedInstances: []
   m_AutoRefresh: 1
   m_Seed: 2126161520
+--- !u!65 &239261736
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239261731}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9, y: 4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &243195128 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 288b117258616aa4f928ba6f91dc47c3,
@@ -5127,7 +5171,7 @@ MonoBehaviour:
   healthbar: {fileID: 1463417268}
   maxSpeed: 8
   acceleration: 3
-  health: 100
+  health: 4
 --- !u!54 &243195132
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5810,6 +5854,7 @@ GameObject:
   - component: {fileID: 272530898}
   - component: {fileID: 272530900}
   - component: {fileID: 272530899}
+  - component: {fileID: 272530901}
   m_Layer: 0
   m_Name: Spline (1)
   m_TagString: Untagged
@@ -6078,6 +6123,27 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!65 &272530901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272530897}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9, y: 4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &274288594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
@@ -6476,7 +6542,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281300356}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -6490,10 +6556,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 1
 --- !u!114 &281300358
 MonoBehaviour:
@@ -6509,7 +6575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camFollowScript: {fileID: 2136925821}
   missileScript: {fileID: 0}
-  gmpoints: {fileID: 1368803474}
+  gameScript: {fileID: 1368803474}
   explosionPrefab: {fileID: 8566017289396297617, guid: b4049f46d231b41498f682dd94c2c321,
     type: 3}
   ProjectilePrefab: {fileID: 0}
@@ -6520,7 +6586,7 @@ MonoBehaviour:
   turnForce: {x: 0, y: 45, z: 0}
   expOffset: {x: 0, y: -2, z: 5}
   inputName: 
-  maxHealth: 100
+  maxHealth: 50
   maxSpeed: 9
   isPlayer2: 1
 --- !u!4 &281300362 stripped
@@ -7422,6 +7488,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
+--- !u!1 &310569908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310569909}
+  - component: {fileID: 310569911}
+  - component: {fileID: 310569910}
+  m_Layer: 0
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &310569909
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310569908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 834180063}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 800, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &310569910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310569908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.16037738, g: 0.132387, b: 0.132387, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &310569911
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310569908}
+  m_CullTransparentMesh: 1
 --- !u!4 &312093217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d2100f10c342364479e7a527f9ef5429,
@@ -7779,7 +7924,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.796, y: 2.33, z: -106.228004}
+  m_LocalPosition: {x: -12.796, y: 1.71, z: -117.637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7844,9 +7989,10 @@ MonoBehaviour:
   vehicles: {fileID: 1795355212}
   target: {fileID: 1795355216}
   firstPersonOffset: {x: -1, y: 2, z: 5}
-  thirdPersonOffset: {x: 0, y: 5, z: -5}
+  thirdPersonOffset: {x: 0, y: 5, z: -10}
   smoothSpeed: 9
   isFirstPerson: 0
+  rotationSpeed: 5
 --- !u!1001 &332293188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8395,7 +8541,7 @@ MonoBehaviour:
   healthbar: {fileID: 1119996793}
   maxSpeed: 15
   acceleration: 4
-  health: 100
+  health: 4
 --- !u!4 &348084552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f6674c1362ba984468bc1e71a2323d66,
@@ -9939,6 +10085,10 @@ PrefabInstance:
       value: Veh_Armor_Car_01
       objectReference: {fileID: 0}
     - target: {fileID: 104122, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 104122, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -9948,7 +10098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 489324, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.405
+      value: -0.78367364
       objectReference: {fileID: 0}
     - target: {fileID: 489324, guid: aea2a6cdcc9d7944090d528486ebaee1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10953,7 +11103,7 @@ PrefabInstance:
     - target: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.4989185
+      value: 27.218918
       objectReference: {fileID: 0}
     - target: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
         type: 3}
@@ -11312,7 +11462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b74c48c2e73e17c418c9394124b75daf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -18.988674
+      value: -18.96
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b74c48c2e73e17c418c9394124b75daf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11353,7 +11503,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: b74c48c2e73e17c418c9394124b75daf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1763103018}
   m_SourcePrefab: {fileID: 100100000, guid: b74c48c2e73e17c418c9394124b75daf, type: 3}
 --- !u!1001 &482271371
 PrefabInstance:
@@ -11916,6 +12070,7 @@ GameObject:
   - component: {fileID: 500474330}
   - component: {fileID: 500474332}
   - component: {fileID: 500474331}
+  - component: {fileID: 500474333}
   m_Layer: 0
   m_Name: Spline (2)
   m_TagString: Untagged
@@ -12184,6 +12339,27 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!65 &500474333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500474329}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &500712085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17135,15 +17311,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 417704, guid: 68840c673a0b18e41a044ed077548d55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.942691
+      value: -7.79
       objectReference: {fileID: 0}
     - target: {fileID: 417704, guid: 68840c673a0b18e41a044ed077548d55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.4113264
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 417704, guid: 68840c673a0b18e41a044ed077548d55, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -120.23
+      value: -118.49
       objectReference: {fileID: 0}
     - target: {fileID: 417704, guid: 68840c673a0b18e41a044ed077548d55, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17584,7 +17760,7 @@ MonoBehaviour:
   healthbar: {fileID: 1981723054}
   maxSpeed: 8
   acceleration: 2
-  health: 100
+  health: 4
 --- !u!54 &762136697
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19031,7 +19207,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1528359577}
+  - {fileID: 310569909}
   m_Father: {fileID: 1660195225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19271,6 +19447,7 @@ GameObject:
   - component: {fileID: 850589542}
   - component: {fileID: 850589544}
   - component: {fileID: 850589543}
+  - component: {fileID: 850589545}
   m_Layer: 0
   m_Name: Spline (4)
   m_TagString: Untagged
@@ -19539,6 +19716,27 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!65 &850589545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850589541}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.9, y: 4, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &853209333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24974,7 +25172,7 @@ PrefabInstance:
     - target: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.51
+      value: 27.23
       objectReference: {fileID: 0}
     - target: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
         type: 3}
@@ -26166,6 +26364,7 @@ GameObject:
   - component: {fileID: 1094336688}
   - component: {fileID: 1094336690}
   - component: {fileID: 1094336689}
+  - component: {fileID: 1094336691}
   m_Layer: 0
   m_Name: Buildings
   m_TagString: Untagged
@@ -26434,6 +26633,27 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!65 &1094336691
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094336687}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1094760038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27942,7 +28162,7 @@ PrefabInstance:
     - target: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.9989185
+      value: 29.718918
       objectReference: {fileID: 0}
     - target: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
         type: 3}
@@ -31490,6 +31710,7 @@ GameObject:
   - component: {fileID: 1319856199}
   - component: {fileID: 1319856201}
   - component: {fileID: 1319856200}
+  - component: {fileID: 1319856202}
   m_Layer: 0
   m_Name: Spline (6)
   m_TagString: Untagged
@@ -31758,6 +31979,27 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!65 &1319856202
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319856198}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.04, y: 4, z: 1.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1321458443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1884074337756752353, guid: cb04eea70ee14ab49b68d12e2cbbf680,
@@ -32142,7 +32384,7 @@ PrefabInstance:
     - target: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9
+      value: 24.619999
       objectReference: {fileID: 0}
     - target: {fileID: 7283668312968719883, guid: 3daef342e8f3f9548b04424eac7d4d0d,
         type: 3}
@@ -32235,7 +32477,7 @@ MonoBehaviour:
   healthbar: {fileID: 1521171864}
   maxSpeed: 30
   acceleration: 3
-  health: 100
+  health: 4
 --- !u!54 &1344579570
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -32473,7 +32715,7 @@ GameObject:
   - component: {fileID: 1368803474}
   m_Layer: 0
   m_Name: GamemodeManager
-  m_TagString: Untagged
+  m_TagString: Objective
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32510,8 +32752,11 @@ MonoBehaviour:
   player2ReachedObjective: 0
   vehicle1: {fileID: 1795355212}
   vehicle2: {fileID: 281300358}
-  objectivePrefab: {fileID: 5512507708346416899, guid: e8743ddd1415a8c43ac298326920c372,
+  objectivePrefab: {fileID: 3723537804638500260, guid: 313b025129040f2429fe0e6085b8b70a,
     type: 3}
+  spawnPos: {x: 0, y: 0, z: 0}
+  maxObjectives: 2
+  objectiveCount: 0
 --- !u!1 &1373274257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 979de0ac65f6d2b48a89e9088986637f,
@@ -32562,7 +32807,7 @@ MonoBehaviour:
   healthbar: {fileID: 664479200}
   maxSpeed: 7
   acceleration: 3
-  health: 100
+  health: 4
 --- !u!114 &1373274260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32970,7 +33215,7 @@ MonoBehaviour:
   healthbar: {fileID: 77617216}
   maxSpeed: 8
   acceleration: 2
-  health: 100
+  health: 4
 --- !u!54 &1398023431
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -33201,7 +33446,7 @@ MonoBehaviour:
   healthbar: {fileID: 804691002}
   maxSpeed: 6
   acceleration: 3
-  health: 100
+  health: 4
 --- !u!54 &1403153655
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -36330,11 +36575,11 @@ Transform:
   m_GameObject: {fileID: 1528359576}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -620.5, y: -369.5, z: 0}
+  m_LocalPosition: {x: 24.557007, y: -35.336426, z: 43.90999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 834180063}
+  m_Father: {fileID: 1660195225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1528359578
 MonoBehaviour:
@@ -40277,8 +40522,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1660195225}
+  - component: {fileID: 1660195226}
   m_Layer: 0
-  m_Name: UIEmpty
+  m_Name: endGameUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40297,9 +40543,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1528359577}
   - {fileID: 834180063}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660195226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660195224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835d8d13d2860144da606802f4f7daaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGameText: {fileID: 310569910}
+  gmPoints: {fileID: 1368803474}
 --- !u!4 &1661245938 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1884074337756752353, guid: cb04eea70ee14ab49b68d12e2cbbf680,
@@ -42134,7 +42395,7 @@ MonoBehaviour:
   healthbar: {fileID: 874488776}
   maxSpeed: 20
   acceleration: 7
-  health: 100
+  health: 4
 --- !u!114 &1726019651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42913,6 +43174,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb04eea70ee14ab49b68d12e2cbbf680, type: 3}
+--- !u!1 &1763103015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: b74c48c2e73e17c418c9394124b75daf,
+    type: 3}
+  m_PrefabInstance: {fileID: 479042104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1763103018
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763103015}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 0.00000087422785, z: 20}
+  m_Center: {x: -0.0000000037252903, y: 1.1641532e-10, z: 0}
 --- !u!4 &1763176648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d2100f10c342364479e7a527f9ef5429,
@@ -43589,7 +43877,7 @@ MonoBehaviour:
   camFollowScript: {fileID: 330585548}
   missileScript: {fileID: 5234623324428686132, guid: 1903ce9482e74f544a1ce0ccad27d48e,
     type: 3}
-  gmpoints: {fileID: 1368803474}
+  gameScript: {fileID: 1368803474}
   explosionPrefab: {fileID: 8566017289396297617, guid: b4049f46d231b41498f682dd94c2c321,
     type: 3}
   ProjectilePrefab: {fileID: 8712455667938503408, guid: 1903ce9482e74f544a1ce0ccad27d48e,
@@ -43597,11 +43885,11 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   rb: {fileID: 1795355217}
   mainCamera: {fileID: 330585545}
-  acceleration: {x: 0, y: 0, z: 50}
-  turnForce: {x: 0, y: 35, z: 0}
+  acceleration: {x: 0, y: 0, z: 75}
+  turnForce: {x: 0, y: 25, z: 0}
   expOffset: {x: 0, y: -2, z: 5}
   inputName: 
-  maxHealth: 1000
+  maxHealth: 50
   maxSpeed: 85
   isPlayer2: 0
 --- !u!4 &1795355216 stripped
@@ -43618,7 +43906,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795355211}
   serializedVersion: 4
-  m_Mass: 3
+  m_Mass: 20
   m_Drag: 0.2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -43632,10 +43920,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 1
 --- !u!4 &1806327955 stripped
 Transform:
@@ -43918,7 +44206,7 @@ MonoBehaviour:
   healthbar: {fileID: 513218233}
   maxSpeed: 15
   acceleration: 4
-  health: 100
+  health: 4
 --- !u!114 &1816798574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45697,6 +45985,7 @@ GameObject:
   - component: {fileID: 1903150434}
   - component: {fileID: 1903150436}
   - component: {fileID: 1903150435}
+  - component: {fileID: 1903150437}
   m_Layer: 0
   m_Name: Spline (5)
   m_TagString: Untagged
@@ -45965,6 +46254,27 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!65 &1903150437
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903150433}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 4, z: 1.9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1907543794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46439,7 +46749,7 @@ MonoBehaviour:
   healthbar: {fileID: 1789774630}
   maxSpeed: 30
   acceleration: 3
-  health: 100
+  health: 4
 --- !u!54 &1924485348
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47140,7 +47450,7 @@ MonoBehaviour:
   healthbar: {fileID: 1940307926}
   maxSpeed: 7
   acceleration: 3
-  health: 100
+  health: 4
 --- !u!1001 &1955102432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48858,7 +49168,7 @@ MonoBehaviour:
   healthbar: {fileID: 1244111404}
   maxSpeed: 15
   acceleration: 4
-  health: 100
+  health: 4
 --- !u!114 &2018721013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49790,7 +50100,7 @@ MonoBehaviour:
   healthbar: {fileID: 424910809}
   maxSpeed: 8
   acceleration: 2
-  health: 100
+  health: 4
 --- !u!54 &2041575046
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50624,7 +50934,7 @@ MonoBehaviour:
   healthbar: {fileID: 638643858}
   maxSpeed: 8
   acceleration: 2
-  health: 100
+  health: 4
 --- !u!54 &2086045045
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52208,6 +52518,7 @@ MonoBehaviour:
   thirdPersonOffset: {x: 0, y: 5, z: -5}
   smoothSpeed: 9
   isFirstPerson: 0
+  rotationSpeed: 5
 --- !u!114 &2136925822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52312,7 +52623,7 @@ Transform:
   m_GameObject: {fileID: 2136925820}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.83, y: 2.33, z: -106.020004}
+  m_LocalPosition: {x: -6.83, y: 1.71, z: -116.299}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

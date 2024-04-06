@@ -3,51 +3,50 @@ using UnityEngine;
 public class CamFollow : MonoBehaviour
 {
     public Vehicles vehicles;
-    Vector3 currentOffset; 
     public Transform target;
     public Vector3 firstPersonOffset;
     public Vector3 thirdPersonOffset;
-    public float smoothSpeed = 1f; // smoothing speed value 
+    public float smoothSpeed = 3f; // smoothing speed value 
     public bool isFirstPerson = false;
-    
-    float hozInput;
-    float forInput;
+    public float rotationSpeed = 5f; // rotation speed value
+
+    private Vector3 currentOffset;
 
     // Start is called before the first frame update
     void Start()
     {
         // Set starting perspective 
-        currentOffset = thirdPersonOffset;
+        SetCameraOffset();
     }
 
-    // Update is called once per frame
+    // LateUpdate is called once per frame, after all Update calls
     void LateUpdate()
     {
-        //get input hoz and vert 
-        hozInput = Input.GetAxis("Horizontal");
-        forInput = Input.GetAxis("Vertical");
-
         if (target == null) return; // Ensure that there is a target set 
-        if (!vehicles.isPlayer2)
+
+        // Toggle between first-person and third-person perspectives
+        if ((Input.GetKeyDown(KeyCode.F) && !vehicles.isPlayer2) ||
+            (Input.GetKeyDown(KeyCode.Comma) && vehicles.isPlayer2))
         {
-            // Toggle between first-person and third-person perspectives
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                isFirstPerson = !isFirstPerson; // toggles the first person bool on keypress 
-                currentOffset = isFirstPerson ? firstPersonOffset : thirdPersonOffset; // set current offset based on value in isFirstPerson
-            }
-        } else {
-            if (Input.GetKeyDown(KeyCode.Comma)) {
-                isFirstPerson = !isFirstPerson; // toggles the first person bool on keypress 
-                currentOffset = isFirstPerson ? firstPersonOffset : thirdPersonOffset; // set current offset based on value in isFirstPerson
-            }
+            isFirstPerson = !isFirstPerson;
+            SetCameraOffset();
         }
 
-        // gets the desired postion 
-        Vector3 desiredPosition = target.position + currentOffset ;
+        // Update desired position and rotation based on player's input
+        float hozInput = Input.GetAxis("Horizontal");
+        Vector3 desiredPosition = target.position + currentOffset + Vector3.right * hozInput;
+        Quaternion desiredRotation = Quaternion.LookRotation(target.position - transform.position, Vector3.up);
 
-        // Move the camera left right 
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime );
-        
+        // Smoothly move and rotate the camera towards the desired position and rotation
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed );
+        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, rotationSpeed );
+    }
+
+    private void SetCameraOffset()
+    {
+        currentOffset = isFirstPerson ? firstPersonOffset : thirdPersonOffset;
     }
 }
+
+
+
